@@ -12,7 +12,7 @@ timeout_sec = 60
 target_pattern = r'^(2\d{3})-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])T(\d+?):(\d+?):(\d+?)\s(.+?)\sINF\sTime:\s([\d\.]+?)m\sFPS:\s([\d\.]+?)\sHeap:\s([\d\.]+?)MB\sMax:\s([\d\.]+?)MB\sChunks:\s(\d+?)\sCGO:\s(\d+?)\sPly:\s(\d+?)\sZom:\s(\d+?)\sEnt:\s(\d+?)\s\((\d+?)\)\sItems:\s(\d+?)\sCO:\s(\d+?)\sRSS:\s([\d\.]+?)MB'
 repatter = re.compile(target_pattern)
 
-with open('server-status.csv', 'w') as f:
+with open('server-status.csv', 'w', newline='') as f:
     writer = csv.writer(f)
     # CSV header
     writer.writerow(['timestamp', 'time from boot(min)', 'FPS', 'Heap memory(MB)', 'Max memory(MB)', 'chunks', 'CGO', 'Players', 'Zombie', 'Entity', 'Total Entity', 'Items', 'CO', 'RSS(MB)'])
